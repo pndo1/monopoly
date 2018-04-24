@@ -16,6 +16,27 @@ public class Card
     private int money;
     private int move; 
     public Card(){
+        
+        
+    }
+    
+    public int getMoney()
+    {
+        return money;
+    }
+    
+    public int getMove()
+    {
+        return move;
     }
 
+    public String getDescription()
+    {
+        return description;
+    }
+    
+    public String getName()
+    {
+        return name;
+    }
 }
