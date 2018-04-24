@@ -9,7 +9,7 @@
  * 
  *
  */
-public class Boxes
+public class Box
 {
     private String color;
     private String type;
@@ -18,7 +18,7 @@ public class Boxes
     private int loc;
     private Card property; //For later use
     
-    public Boxes(String c, String t, String n, int v, int l){
+    public Box(String c, String t, String n, int v, int l){
      color = c;
      type = t;
      name = n;
