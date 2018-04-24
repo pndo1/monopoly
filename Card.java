@@ -43,6 +43,11 @@ public class Card
     {
         return description;
     }
+    
+    public void setDescription(String d)
+    {
+        description=d;
+    }
 
     public String getName()
     {

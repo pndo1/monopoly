@@ -13,12 +13,13 @@ public class ChanceCard extends Card
 {
     private String action;
     public ChanceCard(){
+        super();
         int i=(int)(Math.random()*16+1);
         if(i==1){
-           action ="GET OUT OF JAIL CARD  this card may be kept until needed or sold";
+           super.setDescription("GET OUT OF JAIL CARD  this card may be kept until needed or sold");
         }
         else if(i==2){
-            action="GO BACK THREE SPACES";
+            super.setDescription("GO BACK THREE SPACES");
         }
         else if(i==2){
             action="ADVANCE TO GO(collect $200)";

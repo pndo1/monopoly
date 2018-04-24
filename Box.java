@@ -26,6 +26,11 @@ public class Box
      loc = l;
     }
     
+    public Box()
+    {
+        
+    }
+    
     public String getColor(){
         return color;
     }
