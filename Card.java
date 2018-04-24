@@ -16,6 +16,10 @@ public class Card
     private int money;
     private int move; 
     public Card(){
+        description= null; 
+        name= null;
+        money= 0;
+        move=0;
     }
 
 }
