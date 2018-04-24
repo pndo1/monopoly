@@ -11,5 +11,8 @@
  */
 public class ChanceCard extends Card
 {
+    public ChanceCard(){
+    }
+        
 
 }
