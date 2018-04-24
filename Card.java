@@ -15,6 +15,11 @@ public class Card
     private String name;
     private int money;
     private int move; 
+    /**
+     * the constructor is created so the subclasses can acsess the constructer
+     * @param:none 
+     * @return:none 
+     */
     public Card()
     {
         description= null; 
