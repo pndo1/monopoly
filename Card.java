@@ -32,13 +32,23 @@ public class Card
     {
         return money;
     }
+    
+    public void setMoney(int m)
+    {
+        money=m;
+    }
 
     public int getMove()
     {
         return move;
 
     }
-
+    
+    public void setMove(int m)
+    {
+        move=m;
+    }
+    
     public String getDescription()
     {
         return description;
@@ -52,5 +62,10 @@ public class Card
     public String getName()
     {
         return name;
+    }
+    
+    public void setName(String n)
+    {
+        name=n;
     }
 }
