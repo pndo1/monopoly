@@ -6,7 +6,9 @@
  * Assignment #:
  * 
  * Brief Program Description:
- * 
+ * is the super class for ChanceCard and ChestCard, models the actions of a 
+ * Card in the game of monoply. Only contains the getters and setters for the 
+ * values of a Card.
  *
  */
 public class Card
