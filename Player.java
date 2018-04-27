@@ -18,9 +18,9 @@ public class Player
     private boolean turn=false;
     private boolean inJail=false;
     private static int numPlayers;
-    public Player(int m)
+    public Player()
     {
-        money=m;
+        money=1500;
         hand=new ArrayList<Card>();
         propertyCards=new ArrayList<PropertyCard>();
         loc=0;
