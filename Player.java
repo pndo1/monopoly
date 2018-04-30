@@ -31,4 +31,12 @@ public class Player
     {
        return numPlayers; 
     }
+    
+    public void setPlayerMoney(int m){
+        money =m;
+    }
+    
+    public int getPlayerMoney(){
+        return money; 
+    } 
 }
