@@ -14,12 +14,10 @@ public class ChanceCard extends Card
 
     private String action;
     public ChanceCard(int i){
-<<<<<<< HEAD
+
         super();      
         super.setName("Chance");
-=======
-        super();        
->>>>>>> 8852a77c0a6aec5d02e8402a8433c0e07ddf0ec4
+
         if(i==1){
             super.setDescription("ADVANCE TO GO(collect $200)");
             super.setMove(0);
@@ -50,10 +48,6 @@ public class ChanceCard extends Card
             super.setDescription("HOSPITAL FEES PAY $100");
             super.setMoney(super.getMoney()-100);
         }
-
-        else if(i==7){
-        }
-
         else if(i==9){
             super.setDescription("MAKE GENERAL REPAIRS ON ALL YOUR PROPERTY. PAY $150");
             super.setMoney(super.getMoney()-150);
@@ -66,18 +60,12 @@ public class ChanceCard extends Card
         else if(i==8){
             super.setDescription("YOU HAVE WON SECOND PRIZE IN A BEAUTY CONTEST.\nCOLLECT $50 ");
             super.setMoney(super.getMoney()+50);
-<<<<<<< HEAD
 
-=======
->>>>>>> 8852a77c0a6aec5d02e8402a8433c0e07ddf0ec4
         }
         else if(i==12){
             super.setDescription("GO TO JAIL.\nGO DIRECTLY TO JAIL.\nDON'T PASS GO AND DON'T COLLECT $200");
             super.setMove(-1);
-<<<<<<< HEAD
 
-=======
->>>>>>> 8852a77c0a6aec5d02e8402a8433c0e07ddf0ec4
         }
         else if(i==13){
             super.setDescription("PAY SCHOOL FEES OF $150");
@@ -91,19 +79,6 @@ public class ChanceCard extends Card
             super.setDescription("ADVANCE TO THE NEAREST UTILITY");
         }
         else if(i==16){
-            super.setDescription("YOU HAVE WON A CROSSWORD COMPETITION- COLLECT $100");
-
-        }
-
-        else if(i==13){
-            super.setDescription("PAY SCHOOL FEES OF $150");
-            super.setMoney(super.getMoney()-150);
-        }
-        else if(i==10){
-            super.setDescription("TAKE A TRIP TO READING RAILROAD  – If you pass Go, collect $200");
-            super.setMove(5);
-        }
-        else if(i==11){
             super.setDescription("YOU HAVE WON A CROSSWORD COMPETITION- COLLECT $100");
         }
     }
