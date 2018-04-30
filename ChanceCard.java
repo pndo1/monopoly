@@ -11,8 +11,14 @@
  */
 public class ChanceCard extends Card
 {
+<<<<<<< HEAD
     private String action;
     public ChanceCard(int i){
+=======
+     private String action;
+    public ChanceCard(int i){
+        super();        
+>>>>>>> d4715eb59a285d1745b81cc289ddd9b95ebb9c60
         if(i==1){
             super.setDescription("GET OUT OF JAIL CARD  this card may be kept until needed or sold");
         }
