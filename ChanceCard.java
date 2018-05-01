@@ -2,19 +2,22 @@
 /**
  * ChanceCard.java  
  *
- * @author:
+ * @author:Pradnya Wani 
  * Assignment #:
  * 
  * Brief Program Description:
- * 
- *
+ * This class makes Chace cards and has setters and getters so that they can be accessed.
+ * It also has a actions for every card,a nd calls methods from the superClass to make required 
+ * changes
+ * @param:int i
+ * @return: none
  */
 public class ChanceCard extends Card
 {
 
     private String action;
     public ChanceCard(int i){
-        super();        
+        super.setName("Chance card");        
         if(i==1){
             super.setDescription("GET OUT OF JAIL CARD  this card may be kept until needed or sold");
         }
