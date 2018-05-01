@@ -11,8 +11,14 @@ public class Game
         ArrayList<Player> players=new ArrayList<Player>();
         for(int i=0;i<numPlayers;i++) {
             players.add(new Player());
-
         }
-        System.out.println(Player.getNumPlayers());
+        for(int i=0;i<11;i++) {
+            System.out.println(rollDice());
+        }
     }
+
+
+public static int rollDice() {
+    return (int)(Math.random()*6+1);
+}
 }
