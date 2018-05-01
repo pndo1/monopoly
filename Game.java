@@ -12,6 +12,7 @@ public class Game {
             players.add(new Player());
         }
         System.out.println("Ready player 1");
+        System.out.println("😡");
     }
 
 
@@ -19,3 +20,7 @@ public class Game {
         return (int) (Math.random() * 6 + 1);
     }
 }
+
+//james vietch ted talk
+
+
