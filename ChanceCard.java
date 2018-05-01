@@ -17,14 +17,7 @@ public class ChanceCard extends Card
 
     private String action;
     public ChanceCard(int i){
-<<<<<<< HEAD
-        super.setName("Chance card");        
-=======
-
-        super();      
-        super.setName("Chance");
-
->>>>>>> 0f17986173f767f65a1595419ae3585fd444e62f
+        super.setName("Chance card");  
         if(i==1){
             super.setDescription("ADVANCE TO GO(collect $200)");
             super.setMove(0);
@@ -82,10 +75,8 @@ public class ChanceCard extends Card
             super.setDescription("TAKE A TRIP TO READING RAILROAD  – If you pass Go, collect $200");
             super.setMove(5);
         }
+       
         else if(i==15){
-            super.setDescription("ADVANCE TO THE NEAREST UTILITY");
-        }
-        else if(i==16){
             super.setDescription("YOU HAVE WON A CROSSWORD COMPETITION- COLLECT $100");
         }
     }
