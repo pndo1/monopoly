@@ -22,7 +22,7 @@ public class Deck
            Card c1=new ChestCard(i);
            chestDeck.add(c1);
         }
-        for( int i=0;i<12;i++)
+        for( int i=0;i<14;i++)
         {
            Card c1=new ChestCard(i);
            chanceDeck.add(c1);

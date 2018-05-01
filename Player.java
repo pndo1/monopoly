@@ -45,4 +45,9 @@ public class Player
         money+=c.getMoney();
         loc=c.getMove();
     }
+    
+    public void move(int m)
+    {
+        loc+=m;
+    }
 }
