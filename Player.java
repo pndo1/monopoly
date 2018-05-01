@@ -50,4 +50,12 @@ public class Player
     {
         loc+=m;
     }
+
+    public void buyPropertyCard(PropertyCard pc) {
+        money-=pc.getMoney();
+        propertyCards.add(pc);
+    }
+
+    }
+    }
 }
