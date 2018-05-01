@@ -18,7 +18,7 @@ public class Card
     private int money;
     private int move; 
     /**
-     * the constructor is created so the subclasses can acsess the constructer
+     * the constructor is created so the subclasses can access the constructer
      * @param:none 
      * @return:none 
      */

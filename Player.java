@@ -38,5 +38,11 @@ public class Player
     
     public int getPlayerMoney(){
         return money; 
-    } 
+    }
+    
+    public void change(Card c)
+    {
+        money+=c.getMoney();
+        loc=c.getMove();
+    }
 }
