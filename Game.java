@@ -9,7 +9,7 @@ public class Game
         System.out.print("How many players? ");
         int numPlayers=scan.nextInt();
         ArrayList<Player> players=new ArrayList<Player>();
-        for(int i=0;i<=numPlayers;i++) {
+        for(int i=0;i<numPlayers;i++) {
             players.add(new Player());
 
         }
