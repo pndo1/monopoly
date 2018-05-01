@@ -17,14 +17,12 @@ public class ChanceCard extends Card
 
     private String action;
     public ChanceCard(int i){
-<<<<<<< HEAD
-        super.setName("Chance card");        
-=======
+        super();
+        super.setName("Chance card");
 
-        super();      
+
         super.setName("Chance");
 
->>>>>>> 0f17986173f767f65a1595419ae3585fd444e62f
         if(i==1){
             super.setDescription("ADVANCE TO GO(collect $200)");
             super.setMove(0);
