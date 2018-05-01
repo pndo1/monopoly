@@ -17,11 +17,7 @@ public class ChanceCard extends Card
 
     private String action;
     public ChanceCard(int i){
-        super();
         super.setName("Chance card");
-
-
-        super.setName("Chance");
 
         if(i==1){
             super.setDescription("ADVANCE TO GO(collect $200)");
@@ -75,6 +71,7 @@ public class ChanceCard extends Card
         }
         else if(i==13){
             super.setDescription("YOU HAVE WON A CROSSWORD COMPETITION- COLLECT $100");
+            super.setMoney(super.getMoney()+100);
         }
     }
 }
