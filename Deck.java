@@ -17,12 +17,12 @@ public class Deck
     {
         chestDeck= new ArrayList<Card>();
         chanceDeck=new ArrayList<Card>();
-        for( int i=0;i<14;i++)
+        for( int i=0;i<13;i++)
         {
            Card c1=new ChestCard(i);
            chestDeck.add(c1);
         }
-        for( int i=0;i<14;i++)
+        for( int i=0;i<13;i++)
         {
            Card c1=new ChestCard(i);
            chanceDeck.add(c1);

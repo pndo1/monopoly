@@ -36,34 +36,30 @@ public class ChestCard extends Card
             super.setMoney(50);
         }
         else if(i==6){
-            super.setDescription("Grand Opera Night {Opening} – Collect $50 from every player for opening night seats");
-            super.setMoney(50*Player.getNumPlayers());
-        }
-        else if(i==7){
             super.setDescription("You inherit $100");
             super.setMoney(100);
         }
-        else if(i==8){
+        else if(i==7){
             super.setDescription("Holiday Fund matures - Receive $100 ");
             super.setMoney(100);
         }
-        else if(i==9){
+        else if(i==8){
             super.setDescription("Income tax refund – Collect $20 ");
             super.setMoney(20);
         }
-        else if(i==10){
+        else if(i==9){
             super.setDescription("Life insurance matures – Collect $100 ");
             super.setMoney(100);
         }
-        else if(i==11){
+        else if(i==10){
             super.setDescription("Pay hospital fees of $100");
             super.setMoney(-100);
         }
-        else if(i==12){
+        else if(i==11){
             super.setDescription("Pay school fees {tax} of $150");
             super.setMoney(-150);
         }
-        else if(i==13){
+        else if(i==12){
             super.setDescription("Receive $25 consultancy fee ");
             super.setMoney(25);
         }

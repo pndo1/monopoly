@@ -37,44 +37,41 @@ public class ChanceCard extends Card
         }
         else if(i==4){
             super.setDescription("BANK PAYS YOU DIVIDEND OF $50");
-            super.setMoney(super.getMoney()+50);
+            super.setMoney(50);
         }
-
         else if(i==5){
-            super.setDescription("YOU HAVE BEEN ELECTED CHAIRMAN OF THE BOARD. PAY EACH PLAYER $50. ");          
+            super.setDescription("HOSPITAL FEES PAY $100");
+            super.setMoney(-100);
         }
         else if(i==6){
-            super.setDescription("HOSPITAL FEES PAY $100");
-            super.setMoney(super.getMoney()-100);
+            super.setDescription("MAKE GENERAL REPAIRS ON ALL YOUR PROPERTY. PAY $150");
+            super.setMoney(-150);
         }
         else if(i==7){
-            super.setDescription("MAKE GENERAL REPAIRS ON ALL YOUR PROPERTY. PAY $150");
-            super.setMoney(super.getMoney()-150);
-        }
-        else if(i==8){
 
             super.setDescription("YOUR BUILDING LOAN MATURES.\nCOLLECT $150");
-            super.setMoney(super.getMoney()+150);
+            super.setMoney(150);
         }
-        else if(i==9){
+        else if(i==8){
             super.setDescription("YOU HAVE WON SECOND PRIZE IN A BEAUTY CONTEST.\nCOLLECT $50 ");
-            super.setMoney(super.getMoney()+50);
+            super.setMoney(50);
 
         }
-        else if(i==10){
+        else if(i==19){
             super.setDescription("GO TO JAIL.\nGO DIRECTLY TO JAIL.\nDON'T PASS GO AND DON'T COLLECT $200");
             super.setMove(-1);
         }
-        else if(i==11){
+        else if(i==10){
             super.setDescription("PAY SCHOOL FEES OF $150");
-            super.setMoney(super.getMoney()-150);
+            super.setMoney(-150);
         }
-        else if(i==12){
+        else if(i==11){
             super.setDescription("TAKE A TRIP TO READING RAILROAD  – If you pass Go, collect $200");
             super.setMove(5);
         }
-        else if(i==13){
+        else if(i==12){
             super.setDescription("YOU HAVE WON A CROSSWORD COMPETITION- COLLECT $100");
+            super.setMoney(100);
         }
     }
 }
