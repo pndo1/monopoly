@@ -11,12 +11,23 @@ public class Game {
             players.add(new Player());
         }
         System.out.println("Ready player 1");
+        for(Player e: players)
+        {
+            String cont="y";
+            while (cont.equals("y"))
+            {
+                int dice1=rollDice();
+                int dice2=rollDice();
+                e.move(dice1+dice2);
+            }
+        }
+
     }
+
     public static int rollDice() {
         return (int) (Math.random() * 6 + 1);
     }
 }
 
 //james vietch ted talk
-
 
