@@ -28,6 +28,3 @@ public class Game {
         return (int) (Math.random() * 6 + 1);
     }
 }
-
-//james vietch ted talk
-

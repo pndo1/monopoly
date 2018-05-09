@@ -50,5 +50,8 @@ public class Box
     public int getLoc(){
         return loc;
     }
-
+    
+    public String toString(){
+        return "You are currently on "+ name+"which is the color "+ color+ "and costs " + value;
+    }
 }
