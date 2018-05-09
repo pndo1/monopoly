@@ -18,6 +18,7 @@ public class Box
     private int loc;
     private Card property; //For later use
     
+    
     public Box(String c, String t, String n, int v, int l){
      color = c;
      type = t;
