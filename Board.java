@@ -63,8 +63,30 @@ public class Board
         return board;
     }
     
-    public void getSpot(int x)
+    public Box getSpot(int x)
     {
-        System.out.println("You are on"+board.get(x).toString());
+        return board.get(x);
+    }
+    
+    public void printSpot(int x)
+    {
+        System.out.println(board.get(x).toString());
+    }
+    
+    public int checkProperty(int x)
+    {
+        if(board.get(x).getType().equals("Property") || board.get(x).getType().equals("Railroad") || board.get(x).getType().equals("Utility"))
+        {
+            return 1;
+        }
+        else if(board.get(x).getType().equals("Tax"))
+        {
+            return 2;
+        }
+        else
+        {
+            return 3;
+        }
+        
     }
     }

@@ -36,6 +36,11 @@ public class Player
         money =m;
     }
     
+    public void pay(int m)
+    {
+        money-=m;
+    }
+    
     public int getPlayerMoney(){
         return money; 
     }

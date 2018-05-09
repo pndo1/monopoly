@@ -17,13 +17,14 @@ public class Box
     private int value;
     private int loc;
     private Card property; //For later use
-    
+    private int owned;
     public Box(String c, String t, String n, int v, int l){
      color = c;
      type = t;
      name = n;
      value = v;
      loc = l;
+     owned=0;
     }
     
     public Box()
@@ -50,5 +51,18 @@ public class Box
     public int getLoc(){
         return loc;
     }
-
+    
+    public String toString(){
+        return "You are currently on "+ name+" which is the color "+ color+ " and costs " + value;
+    }
+    
+    public void bought(int x)
+    {
+        owned=x;
+    }
+    
+    public int owned()
+    {
+       return owned; 
+    }
 }
