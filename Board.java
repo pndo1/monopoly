@@ -57,4 +57,14 @@ public class Board
         board.add(new Box("Blue", "Property", "Boardwalk", 400, 39));
         
     }
+    
+    public ArrayList<Box> getBoard()
+    {
+        return board;
+    }
+    
+    public void getSpot(int x)
+    {
+        System.out.println("You are on"+board.get(x).toString());
+    }
     }

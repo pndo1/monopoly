@@ -55,7 +55,19 @@ public class Player
         money-=pc.getMoney();
         propertyCards.add(pc);
     }
-
+    
+    public boolean bankrupt()
+    {
+        if(money<0){
+            return true;
+        }
+        return false;
+    }
+    
+    public int getLoc()
+    {
+        return loc;
+    }
     }
 
 
