@@ -6,11 +6,20 @@
  * Assignment #:
  * 
  * Brief Program Description:
- * 
+ * This class gives discriptions and actions to community chest cards in Monopoly.
+ * It is a subclass of card.
  *
  */
 public class ChestCard extends Card
 {
+    /** 
+     * The method below ina constructor for the class ChestCard.
+     * It calls the class setDescription method from the card 
+     * and gives instruction for when the card is used. 
+     * it also calls the required methods to do the instructions 
+     * provided by the card. 
+     * @param: int i the number of the card that needs to be called
+     */
     public ChestCard(int i)
     {
         super();
