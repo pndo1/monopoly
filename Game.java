@@ -13,49 +13,66 @@ public class Game {
         int numPlayers = scan.nextInt();
         ArrayList<Player> players = new ArrayList<Player>();
         for (int i = 0; i < numPlayers; i++) {
-            players.add(new Player());
+            players.add(new Player(i)); //Creates Player list
         }
-        System.out.println("垄断");
+        System.out.println("Ready Player 1");
         while(!win)
         {
             for(Player e: players)
-            {
+            {                
                 int dice1=rollDice();
                 int dice2=rollDice();
                 e.move(dice1+dice2);
-                System.out.println("You rolled a "+dice1+" and a "+dice2);
-                board.printSpot(e.getLoc());
-                if(board.getSpot(e.getLoc()).owned()==0)
-                {
-                    while(dice1==dice2)
-                    {
-                        System.out.println("What do you want to do? (");
-                        String thing=scan.next();
-                    }
-                    if(board.checkProperty(e.getLoc())==1)
-                    {
-                        System.out.println("What do you want to do? (Buy,Pass");
-                        String thing=scan.next();
-                    }
+                System.out.println("You rolled a "+dice1+" and a "+dice2); //Moves the player
 
-                }
-                else
-                {
-                    while(dice1==dice2)
-                    {
-                        dice1=rollDice();
-                        dice2=rollDice();
-                        e.move(dice1+dice2);
-                        System.out.println("You rolled a "+dice1+" and a "+dice2);
-                        board.printSpot(e.getLoc());
-                    }
-                    int pay=board.getSpot(e.getLoc()).getValue();
-                    e.pay(pay);
+                if(e.getLoc() >= 40){
+                    int x = 0;
+                    e.earnMoney(200);
+                    x = e.getLoc() - board.getBoard().size();
+                    e.setLoc(x); //Checks to see if the player has gone over the board size 
                 }
 
+                if(board.getSpot(e.getLoc()).getLoc()==-1)
+                {
+                    e.move(1); //Makes sure player isn't on jail while traversing the board
+                }
+                board.printSpot(e.getLoc()); 
+                if(board.getSpot(e.getLoc()).getType().equals("Property")){ //Checks if type is property
+                    if(board.getSpot(e.getLoc()).owned()==0) //Checks if property is aviliable
+                    {
+
+                        if(board.checkProperty(e.getLoc())==1)
+                        {
+                            System.out.println("What do you want to do? (Buy,Pass)");
+                            String thing=scan.next();
+                        }
+                    }
+                    else
+                    {
+                        int pay=board.getSpot(e.getLoc()).getValue();
+                        e.pay(pay);
+                    }
+                }
+                
+                else if(board.getSpot(e.getLoc()).getName().equals("GO TO JAIL")){
+                    e.setLoc(-1);
+                }
+                
+                else if(board.getSpot(e.getLoc()).getType().equals("Railroad")){
+                    
+                }
+            
+                if(e.bankrupt())
+                {
+                    players.remove(e);
+                }
             }
-            win=true;
-            System.out.println("Player 1 won");
+            if(players.size()==1)
+            {
+                win=true;
+                System.out.println("Player "+players.get(0).getPlayerNum()+"  won");
+            }
+
         }
     }
 

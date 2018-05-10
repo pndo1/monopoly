@@ -15,14 +15,15 @@ public class Player
     private ArrayList<Card> hand;
     private int loc;
     private boolean turn=false;
-    private boolean inJail=false;
     private static int numPlayers;
-    public Player()
+    private int playerNum;
+    public Player(int n)
     {
         money=1500;
         hand=new ArrayList<Card>();
         loc=0;
         numPlayers++;
+        playerNum=n;
     }
     
     public static int getNumPlayers()
@@ -37,6 +38,10 @@ public class Player
     public void pay(int m)
     {
         money-=m;
+    }
+    
+    public void earnMoney(int m){
+     money += m;   
     }
     
     public int getPlayerMoney(){
@@ -54,10 +59,10 @@ public class Player
         loc+=m;
     }
 
-    // public void buyPropertyCard(PropertyCard pc) {
-        // money-=pc.getMoney();
-        // propertyCards.add(pc);
-    // }
+    public void buyPropertyCard(Card pc) {
+        money-=pc.getMoney();
+        hand.add(pc);
+    }
     
     public boolean bankrupt()
     {
@@ -70,6 +75,16 @@ public class Player
     public int getLoc()
     {
         return loc;
+    }
+    
+    
+    public int getPlayerNum()
+    {
+        return playerNum;
+    }
+    
+    public void setLoc(int x){
+        loc = x;
     }
     }
 

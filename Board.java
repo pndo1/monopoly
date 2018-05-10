@@ -24,8 +24,8 @@ public class Board
         board.add(new Box("White", "Chance", "Chance", 0, 7));
         board.add(new Box("Blue", "Property", "Vermont Avenue", 100, 8));
         board.add(new Box("Blue","Property", "Connecticut Avenue", 100, 9));
-        board.add(new Box("White", "Jail", "Just Visiting", 0, 10));
         board.add(new Box("White", "Jail", "Jail", 0, -1)); //THIS IS JAIL - NOT A PHYSICAL SPOT ON THE BOARD
+        board.add(new Box("White", "Jail", "Just Visiting", 0, 10));
         board.add(new Box("Purple", "Property", "St.Charles Place", 140, 11));
         board.add(new Box("White", "Utility", "Electric Company", 150, 12));
         board.add(new Box("Purple", "Property", "States Avenue", 140, 13));
@@ -55,24 +55,24 @@ public class Board
         board.add(new Box("Blue", "Property", "Park Place", 350, 37));
         board.add(new Box("White", "Tax", "Luxury Tax", -100, 38));
         board.add(new Box("Blue", "Property", "Boardwalk", 400, 39));
-        
+
     }
-    
+
     public ArrayList<Box> getBoard()
     {
         return board;
     }
-    
+
     public Box getSpot(int x)
     {
         return board.get(x);
     }
-    
+
     public void printSpot(int x)
     {
         System.out.println(board.get(x).toString());
     }
-    
+
     public int checkProperty(int x)
     {
         if(board.get(x).getType().equals("Property") || board.get(x).getType().equals("Railroad") || board.get(x).getType().equals("Utility"))
@@ -87,6 +87,6 @@ public class Board
         {
             return 3;
         }
-        
+
     }
-    }
+}
