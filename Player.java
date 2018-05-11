@@ -17,13 +17,16 @@ public class Player
     private boolean turn=false;
     private static int numPlayers;
     private int playerNum;
-    public Player(int n)
+    private String name;
+    public Player(int n, String na)
     {
         money=1500;
         hand=new ArrayList<Card>();
         loc=0;
         numPlayers++;
         playerNum=n;
+        name=na;
+
     }
     
     public static int getNumPlayers()

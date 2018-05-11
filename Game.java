@@ -13,7 +13,9 @@ public class Game {
         int numPlayers = scan.nextInt();
         ArrayList<Player> players = new ArrayList<Player>();
         for (int i = 0; i < numPlayers; i++) {
-            players.add(new Player(i)); //Creates Player list
+            System.out.print("Enter player's name: ");
+            String playerName=scan.next();
+            players.add(new Player(i,playerName)); //Creates Player list
         }
         System.out.println("Ready Player 1");
         while(!win)
@@ -43,8 +45,14 @@ public class Game {
 
                         if(board.checkProperty(e.getLoc())==1)
                         {
+                            System.out.println("You have $"+e.getPlayerMoney()+".");
                             System.out.println("What do you want to do? (Buy,Pass)");
-                            String thing=scan.next();
+                            String buyAsk=scan.next();
+                            if(buyAsk.equals("Buy")||buyAsk.equals("buy")) {
+                                board.getSpot(e.getLoc()).bought(1);
+
+                            }
+
                         }
                     }
                     else
@@ -61,6 +69,7 @@ public class Game {
                 else if(board.getSpot(e.getLoc()).getType().equals("Railroad")){
                     
                 }
+                else if(board.getSpot(e.getLoc()).getType().equals("")){}
             
                 if(e.bankrupt())
                 {
