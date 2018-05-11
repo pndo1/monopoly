@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class Player
 {
     private int money;
-    private ArrayList<Card> hand;
+    private ArrayList<Box> properties;
     private int loc;
     private boolean turn=false;
     private static int numPlayers;
@@ -21,7 +21,7 @@ public class Player
     public Player(int n, String na)
     {
         money=1500;
-        hand=new ArrayList<Card>();
+        properties=new ArrayList<Box>();
         loc=0;
         numPlayers++;
         playerNum=n;
@@ -62,9 +62,8 @@ public class Player
         loc+=m;
     }
 
-    public void buyPropertyCard(Card pc) {
-        money-=pc.getMoney();
-        hand.add(pc);
+    public void buyPropertyCard(Box prop) {
+        properties.add(prop);
     }
     
     public boolean bankrupt()
@@ -89,6 +88,8 @@ public class Player
     public void setLoc(int x){
         loc = x;
     }
+
+    public String getName(){ return name;}
     }
 
 
