@@ -27,7 +27,7 @@ public class Game {
                 e.move(dice1 + dice2);
                 System.out.println("You rolled a " + dice1 + " and a " + dice2); //Moves the player
 
-                if (e.getLoc() >= 39) {
+                if (e.getLoc() >= 40) {
                     int x = 0;
                     e.earnMoney(200);
                     x = e.getLoc() - board.getBoard().size();
@@ -48,7 +48,7 @@ public class Game {
                             if (e.getPlayerMoney() >= board.getSpot(e.getLoc()).getValue()) {
                                 System.out.println("You have enough money to buy the property. Buy? [yes/no]");
                                 String buyAsk = scan.next();
-                                while(!buyAsk.equals("yes") && !buyAsk.equals("no")) {
+                                while (!buyAsk.equals("yes") && !buyAsk.equals("no")) {
                                     System.out.println("This was an invalid response. Please try again.");
                                     System.out.println("You have enough money to buy the property. Buy? [yes/no]");
                                     buyAsk = scan.next();
@@ -66,12 +66,14 @@ public class Game {
 
                         }
                     } else {
-                        System.out.println("You landed on a property owned by: "+board.getSpot(e.getLoc()).getOwner().getName());
+                        System.out.println("You landed on a property owned by: " + board.getSpot(e.getLoc()).getOwner().getName());
                         int pay = board.getSpot(e.getLoc()).getValue();
                         e.pay(pay);
                         board.getSpot(e.getLoc()).getOwner().earnMoney(pay);
+                        System.out.println("You have to pay them " + pay+" dollars.");
 
                     }
+
                 } else if (board.getSpot(e.getLoc()).getName().equals("GO TO JAIL")) {
                     e.setLoc(-1);
                 } else if (board.getSpot(e.getLoc()).getName().equals("Just Visiting")) {
