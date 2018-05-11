@@ -81,11 +81,11 @@ public class Game {
                                     e.buyPropertyCard(board.getSpot(e.getLoc()));
                                 }
 
-                            }
-                            else
+                            } else
                                 System.out.println("You don't have enough money to buy this property");
 
                         }
+                    }
                 } else if (board.getSpot(e.getLoc()).getType().equals("Just Visiting")) {
                     System.out.println("You are just visiting jail.");
                 }
