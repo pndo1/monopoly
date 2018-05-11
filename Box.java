@@ -17,14 +17,16 @@ public class Box
     private int value;
     private int loc;
     private Card property; //For later use
-    private int owned;
-    public Box(String c, String t, String n, int v, int l){
+    private int owned; 
+    private int rent;
+    public Box(String c, String t, String n, int v, int l, int r){
      color = c;
      type = t;
      name = n;
      value = v;
      loc = l;
      owned=0;
+     rent=r;
     }
     
     public Box()
