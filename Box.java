@@ -19,6 +19,7 @@ public class Box
     private Card property; //For later use
     private int owned; 
     private int rent;
+    private Player owner;
     public Box(String c, String t, String n, int v, int l, int r){
      color = c;
      type = t;
@@ -67,4 +68,8 @@ public class Box
     {
        return owned; 
     }
+
+    public void setOwner(Player p){owner=p;}
+
+    public Player getOwner(){ return owner;}
 }

@@ -38,7 +38,8 @@ public class Game {
                     e.move(1); //Makes sure player isn't on jail while traversing the board
                 }
                 board.printSpot(e.getLoc());
-                if (board.getSpot(e.getLoc()).getType().equals("Property")) { //Checks if type is property
+                String propType=board.getSpot(e.getLoc()).getType();
+                if (propType.equals("Property") || propType.equals("Railroad") || propType.equals("Utility")) { //Checks if type is property
                     if (board.getSpot(e.getLoc()).owned() == 0) //Checks if property is available
                     {
 
@@ -47,33 +48,12 @@ public class Game {
                             if (e.getPlayerMoney() >= board.getSpot(e.getLoc()).getValue()) {
                                 System.out.println("You have enough money to buy the property. Buy? [yes/no]");
                                 String buyAsk = scan.next();
-                                if (buyAsk.equals("yes") || buyAsk.equals("Yes")) {
-                                    e.pay(board.getSpot(e.getLoc()).getValue());
-                                    System.out.println("You now have " + e.getPlayerMoney() + " dollars.");
-                                    board.getSpot(e.getLoc()).bought(1);
-                                    e.buyPropertyCard(board.getSpot(e.getLoc()));
+                                while(!buyAsk.equals("yes") && !buyAsk.equals("no")) {
+                                    System.out.println("This was an invalid response. Please try again.");
+                                    System.out.println("You have enough money to buy the property. Buy? [yes/no]");
+                                    buyAsk = scan.next();
                                 }
 
-                            }
-                            else
-                                System.out.println("You don't have enough money to buy this property");
-
-                        }
-                    } else {
-                        int pay = board.getSpot(e.getLoc()).getValue();
-                        e.pay(pay);
-                    }
-                } else if (board.getSpot(e.getLoc()).getName().equals("GO TO JAIL")) {
-                    e.setLoc(-1);
-                } else if (board.getSpot(e.getLoc()).getType().equals("Railroad")) {
-                    if (board.getSpot(e.getLoc()).owned() == 0) //Checks if property is available
-                    {
-
-                        if (board.checkProperty(e.getLoc()) == 1) {
-                            System.out.println("You have $" + e.getPlayerMoney() + ".");
-                            if (e.getPlayerMoney() >= board.getSpot(e.getLoc()).getValue()) {
-                                System.out.println("You have enough money to buy the property. Buy? [yes/no]");
-                                String buyAsk = scan.next();
                                 if (buyAsk.equals("yes") || buyAsk.equals("Yes")) {
                                     e.pay(board.getSpot(e.getLoc()).getValue());
                                     System.out.println("You now have " + e.getPlayerMoney() + " dollars.");
@@ -82,11 +62,19 @@ public class Game {
                                 }
 
                             } else
-                                System.out.println("You don't have enough money to buy this property");
+                                System.out.println("You don't have enough money to buy this property.");
 
                         }
+                    } else {
+                        System.out.println("You landed on a property owned by: "+board.getSpot(e.getLoc()).getOwner().getName());
+                        int pay = board.getSpot(e.getLoc()).getValue();
+                        e.pay(pay);
+                        board.getSpot(e.getLoc()).getOwner().earnMoney(pay);
+
                     }
-                } else if (board.getSpot(e.getLoc()).getType().equals("Just Visiting")) {
+                } else if (board.getSpot(e.getLoc()).getName().equals("GO TO JAIL")) {
+                    e.setLoc(-1);
+                } else if (board.getSpot(e.getLoc()).getName().equals("Just Visiting")) {
                     System.out.println("You are just visiting jail.");
                 }
 
