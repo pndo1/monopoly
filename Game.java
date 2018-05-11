@@ -79,6 +79,22 @@ public class Game {
                 } else if (board.getSpot(e.getLoc()).getName().equals("Just Visiting")) {
                     System.out.println("You are just visiting jail.");
                 }
+                
+                else if(board.getSpot(e.getLoc()).getType().equals("Tax")){
+                    System.out.println("You are being charged a " + board.getSpot(e.getLoc()).getName() +
+                        " of " + board.getSpot(e.getLoc()).getValue());
+                    e.pay(board.getSpot(e.getLoc()).getValue());
+                    System.out.println("You now have " + e.getPlayerMoney() + " dollars.");
+                }
+
+                else if(board.getSpot(e.getLoc()).getType().equals("Chance")){
+                    int random = ((int) Math.random() * 11);
+                    ChanceCard chance = new ChanceCard(random);
+                    System.out.println("You landed on a Chance spot! Your chance is:");
+                    System.out.println(chance.getDescription());
+                    if(random == 1 || random == 2 || random == 3 || random == 9 || random == 11){
+                    //finish this is the chance loc if statement
+                }
 
                 if (e.bankrupt()) {
                     players.remove(e);
