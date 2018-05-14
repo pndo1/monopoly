@@ -64,6 +64,7 @@ public class Player
 
     public void buyPropertyCard(Box prop) {
         properties.add(prop);
+        prop.setOwner(this);
     }
     
     public boolean bankrupt()

@@ -14,7 +14,7 @@ public class Game {
         int numPlayers = scan.nextInt();
         ArrayList<Player> players = new ArrayList<Player>();
         for (int i = 0; i < numPlayers; i++) {
-            System.out.print("Enter player's name: ");
+            System.out.print("Enter player "+(i+1)+"'s name: ");
             String playerName = scan.next();
             players.add(new Player(i, playerName)); //Creates Player list
         }
@@ -24,20 +24,32 @@ public class Game {
                 System.out.println(e.getName() + " is playing.");
                 int dice1 = rollDice();
                 int dice2 = rollDice();
-                e.move(dice1 + dice2);
+
                 System.out.println("You rolled a " + dice1 + " and a " + dice2); //Moves the player
 
-                if (e.getLoc() >= 40) {
-                    int x = 0;
+                if (e.getLoc() > 40) {
                     e.earnMoney(200);
-                    x = e.getLoc() - board.getBoard().size();
+                    int x = e.getLoc() - board.getBoard().size();
                     e.setLoc(x); //Checks to see if the player has gone over the board size 
+                } else if (board.getSpot(e.getLoc()).getName().equals("JAIL")) {
+                    if (dice1 != dice2) {
+                        System.out.println("You're in jail and you didn't roll doubles, try again.");
+                    } else if (dice1 == dice2) {
+                        System.out.println("You rolled doubles! You're out of jail.");
+                        e.move(dice1 + dice2);
+                        board.printSpot(e.getLoc());
+
+                    }
+                } else {
+                    e.move(dice1 + dice2);
+                    board.printSpot(e.getLoc());
+
                 }
 
-                if (board.getSpot(e.getLoc()).getLoc() == -1) {
-                    e.move(1); //Makes sure player isn't on jail while traversing the board
-                }
-                board.printSpot(e.getLoc());
+
+                //if (board.getSpot(e.getLoc()).getLoc() == -1) {
+                //    e.move(1); //Makes sure player isn't on jail while traversing the board
+                //}
                 String propType = board.getSpot(e.getLoc()).getType();
                 if (propType.equals("Property") || propType.equals("Railroad") || propType.equals("Utility")) { //Checks if type is property
                     if (board.getSpot(e.getLoc()).owned() == 0) //Checks if property is available
@@ -67,10 +79,11 @@ public class Game {
                         }
                     } else {
                         System.out.println("You landed on a property owned by: " + board.getSpot(e.getLoc()).getOwner().getName());
-                        int pay = board.getSpot(e.getLoc()).getValue();
+                        int pay = board.getSpot(e.getLoc()).getRent();
                         e.pay(pay);
                         board.getSpot(e.getLoc()).getOwner().earnMoney(pay);
-                        System.out.println("You have to pay them " + pay + " dollars.");
+                        System.out.println("You have to pay " + board.getSpot(e.getLoc()).getOwner().getName() + " " + board.getSpot(e.getLoc()).getRent() + " dollars.");
+                        System.out.println("You now have " + e.getPlayerMoney() + " dollars.");
 
                     }
 
