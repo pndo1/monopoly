@@ -24,7 +24,6 @@ public class Board
         board.add(new Box("White", "Chance", "Chance", 0, 7,0));
         board.add(new Box("Blue", "Property", "Vermont Avenue", 100, 8,6));
         board.add(new Box("Blue","Property", "Connecticut Avenue", 100, 9,8));
-        board.add(new Box("White", "Jail", "Jail", 0, -1,0)); //THIS IS JAIL - NOT A PHYSICAL SPOT ON THE BOARD
         board.add(new Box("White", "Jail", "Just Visiting", 0, 10,0));
         board.add(new Box("Purple", "Property", "St.Charles Place", 140, 11,10));
         board.add(new Box("White", "Utility", "Electric Company", 150, 12,0));
@@ -55,6 +54,8 @@ public class Board
         board.add(new Box("Blue", "Property", "Park Place", 350, 37,35));
         board.add(new Box("White", "Tax", "Luxury Tax", -100, 38,0));
         board.add(new Box("Blue", "Property", "Boardwalk", 400, 39,50));
+        board.add(new Box("White", "Jail", "Jail", 0, 41,0)); //THIS IS JAIL - NOT A PHYSICAL SPOT ON THE BOARD
+
 
     }
 
