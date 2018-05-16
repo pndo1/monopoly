@@ -18,7 +18,7 @@ public class Board
         board.add(new Box("Brown","Property","Mediterranean Avenue",60,1,2));
         board.add(new Box("White","Chest","Community Chest",0,2,0));
         board.add(new Box("Brown","Property","Baltic Avenue",60,3,4));
-        board.add(new Box("White", "Tax","Income Tax", -200, 4,0));
+        board.add(new Box("White", "Tax","Income Tax", 200, 4,0));
         board.add(new Box("White", "Railroad", "Reading Railroad", 200, 5,25));
         board.add(new Box("Blue", "Property", "Oriential Avenue", 100, 6,6));
         board.add(new Box("White", "Chance", "Chance", 0, 7,0));
@@ -52,7 +52,7 @@ public class Board
         board.add(new Box("White", "Railroad", "Short Line", 200, 35,25));
         board.add(new Box("White", "Chance", "Chance", 0, 36,0));
         board.add(new Box("Blue", "Property", "Park Place", 350, 37,35));
-        board.add(new Box("White", "Tax", "Luxury Tax", -100, 38,0));
+        board.add(new Box("White", "Tax", "Luxury Tax", 100, 38,0));
         board.add(new Box("Blue", "Property", "Boardwalk", 400, 39,50));
         board.add(new Box("White", "Jail", "Jail", 0, 41,0)); //THIS IS JAIL - NOT A PHYSICAL SPOT ON THE BOARD
 

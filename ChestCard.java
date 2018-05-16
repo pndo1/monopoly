@@ -23,56 +23,138 @@ public class ChestCard extends Card
     public ChestCard(int i)
     {
         
-        super.setName("Community Chest");
+       setName("Community Chest");
         if(i==1){
-            super.setDescription("Advance to Go (Collect $200)");
-            super.setMove(0);
+           setDescription("Advance to Go (Collect $200)");
+           setMove(0);
         }
         else if(i==2){
-            super.setDescription("Bank error in your favor – Collect $200");
-            super.setMoney(200);
+         setDescription("Bank error in your favor – Collect $200");
+         setMoney(200);
         }
         else if(i==3){
-            super.setDescription("You have won second prize in a beauty contest – Collect $10");
-            super.setMoney(10);
+            setDescription("You have won second prize in a beauty contest – Collect $10");
+            setMoney(10);
         }
         else if(i==4){
-            super.setDescription("Doctor's fees {fee} – Pay $50");
-            super.setMoney(-50);
+           setDescription("Doctor's fees {fee} – Pay $50");
+            setMoney(-50);
         }
         else if(i==5){
-            super.setDescription("From sale of stock you get $50");
-            super.setMoney(50);
+            setDescription("From sale of stock you get $50");
+            setMoney(50);
         }
         else if(i==6){
-            super.setDescription("You inherit $100");
-            super.setMoney(100);
+            setDescription("You inherit $100");
+            setMoney(100);
         }
         else if(i==7){
-            super.setDescription("Holiday Fund matures - Receive $100 ");
-            super.setMoney(100);
+            setDescription("Holiday Fund matures - Receive $100 ");
+            setMoney(100);
         }
         else if(i==8){
-            super.setDescription("Income tax refund – Collect $20 ");
-            super.setMoney(20);
+            setDescription("Income tax refund – Collect $20 ");
+          setMoney(20);
         }
         else if(i==9){
-            super.setDescription("Life insurance matures – Collect $100 ");
-            super.setMoney(100);
+            setDescription("Life insurance matures – Collect $100 ");
+            setMoney(100);
         }
         else if(i==10){
-            super.setDescription("Pay hospital fees of $100");
-            super.setMoney(-100);
+            setDescription("Pay hospital fees of $100");
+           setMoney(-100);
         }
         else if(i==11){
-            super.setDescription("Pay school fees {tax} of $150");
-            super.setMoney(-150);
+            setDescription("Pay school fees {tax} of $150");
+            setMoney(-150);
         }
         else if(i==12){
-            super.setDescription("Receive $25 consultancy fee ");
-            super.setMoney(25);
+            setDescription("Receive $25 consultancy fee ");
+           setMoney(25);
         }
 
     }
 
+    /**
+     * Returns the ammount of money the Card either gives or a negative value 
+     * if it takes away.
+     * @ return int money
+     * @ Author Ashwin Srinivasan 
+     */
+    public int getMoney()
+    {
+        return super.getMoney();
+    }
+
+    /**
+     * Allows the other classes to set the ammount of money the card is going 
+     * to add or take away.
+     * @param int m ammount money is being set too
+     * @ Author Ashwin Srinivasan
+     */
+    public void setMoney(int m)
+    {
+        super.setMoney(m);
+    }
+
+    /**
+     * Returns the space that the Card moves the player too
+     * @return int move
+     * @Author Ashwin Srinivasan
+     */
+    public int getMove()
+    {
+        return super.getMove();
+    }
+
+    /**
+     * Sets the move value to the value it needs to be for that specific card
+     * @param int m the location that the player will be moved to
+     * @Author Ashwin Srinivasan
+     */
+    public void setMove(int m)
+    {
+        super.setMove(m);
+    }
+
+    /**
+     * Returns the description of the Card
+     * @Return string Description
+     * @Author Ashwin Srinivasan
+     */
+    public String getDescription()
+    {
+        return super.getDescription();
+    }
+
+    /**
+     * Sets the description of the card to the imput value 
+     * @ param String d 
+     * @ author Ashwin Srinivasan
+     */
+    public void setDescription(String d)
+    {
+        super.setDescription(d);
+    }
+
+    /**
+     * returns the name of the Card, either a chance or a chest Card. 
+     * @ return String name, either chance or community chest
+     * @  author Ashwin Srinivasan
+     */
+    public String getName()
+    {
+        return super.getName();
+    }
+
+    /**
+     * Sets the name of the Card to the imputed value
+     * @ preconditon is either Chance Card or Community Chest Card
+     * @ param String n, the name of the Card
+     * @ author Ashwin Srinivasan
+     */
+    public void setName(String n)
+    {
+        super.setName(n);
+    }
 }
