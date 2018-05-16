@@ -32,42 +32,42 @@ public class ChanceCard extends Card
             setMove(11);
         }
         else if(i==4){
-            super.setDescription("BANK PAYS YOU DIVIDEND OF $50");
-            super.setMoney(50);
+            setDescription("BANK PAYS YOU DIVIDEND OF $50");
+            setMoney(50);
         }
         else if(i==5){
-            super.setDescription("HOSPITAL FEES PAY $100");
-            super.setMoney(-100);
+            setDescription("HOSPITAL FEES PAY $100");
+            setMoney(-100);
         }
         else if(i==6){
-            super.setDescription("MAKE GENERAL REPAIRS ON ALL YOUR PROPERTY. PAY $150");
-            super.setMoney(-150);
+            setDescription("MAKE GENERAL REPAIRS ON ALL YOUR PROPERTY. PAY $150");
+            setMoney(-150);
         }
         else if(i==7){
 
-            super.setDescription("YOUR BUILDING LOAN MATURES.\nCOLLECT $150");
-            super.setMoney(150);
+            setDescription("YOUR BUILDING LOAN MATURES.\nCOLLECT $150");
+            setMoney(150);
         }
         else if(i==8){
-            super.setDescription("YOU HAVE WON SECOND PRIZE IN A BEAUTY CONTEST.\nCOLLECT $50 ");
-            super.setMoney(50);
+            setDescription("YOU HAVE WON SECOND PRIZE IN A BEAUTY CONTEST.\nCOLLECT $50 ");
+            setMoney(50);
 
         }
         else if(i==9){
-            super.setDescription("GO TO JAIL.\nGO DIRECTLY TO JAIL.\nDON'T PASS GO AND DON'T COLLECT $200");
-            super.setMove(-1);
+            setDescription("GO TO JAIL.\nGO DIRECTLY TO JAIL.\nDON'T PASS GO AND DON'T COLLECT $200");
+            setMove(-1);
         }
         else if(i==10){
-            super.setDescription("PAY SCHOOL FEES OF $150");
-            super.setMoney(-150);
+            setDescription("PAY SCHOOL FEES OF $150");
+            setMoney(-150);
         }
         else if(i==11){
-            super.setDescription("TAKE A TRIP TO READING RAILROAD  – If you pass Go, collect $200");
-            super.setMove(5);
+            setDescription("TAKE A TRIP TO READING RAILROAD  – If you pass Go, collect $200");
+            setMove(5);
         }
         else if(i==12){
-            super.setDescription("YOU HAVE WON A CROSSWORD COMPETITION- COLLECT $100");
-            super.setMoney(100);
+            setDescription("YOU HAVE WON A CROSSWORD COMPETITION- COLLECT $100");
+            setMoney(100);
         }
     }
 
