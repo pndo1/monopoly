@@ -17,19 +17,19 @@ public class ChanceCard extends Card
 
     private String action;
     public ChanceCard(int i){
-        super.setName("Chance card");
+        setName("Chance card");
 
         if(i==1){
-            super.setDescription("ADVANCE TO GO(collect $200)");
-            super.setMove(0);
+            setDescription("ADVANCE TO GO(collect $200)");
+            setMove(0);
         }
         else if(i==2){
-            super.setDescription("ADVANCE TO BOARDWALK");
-            super.setMove(39);
+            setDescription("ADVANCE TO BOARDWALK");
+            setMove(39);
         }
         else if(i==3){
-            super.setDescription("ADVANCE TO ST. CHARLES PLACE. If you pass go, collect $200");
-            super.setMove(11);
+            setDescription("ADVANCE TO ST. CHARLES PLACE. If you pass go, collect $200");
+            setMove(11);
         }
         else if(i==4){
             super.setDescription("BANK PAYS YOU DIVIDEND OF $50");
@@ -69,5 +69,88 @@ public class ChanceCard extends Card
             super.setDescription("YOU HAVE WON A CROSSWORD COMPETITION- COLLECT $100");
             super.setMoney(100);
         }
+    }
+
+    /**
+     * Returns the ammount of money the Card either gives or a negative value 
+     * if it takes away.
+     * @ return int money
+     * @ Author Ashwin Srinivasan 
+     */
+    public int getMoney()
+    {
+        return super.getMoney();
+    }
+
+    /**
+     * Allows the other classes to set the ammount of money the card is going 
+     * to add or take away.
+     * @param int m ammount money is being set too
+     * @ Author Ashwin Srinivasan
+     */
+    public void setMoney(int m)
+    {
+        super.setMoney(m);
+    }
+
+    /**
+     * Returns the space that the Card moves the player too
+     * @return int move
+     * @Author Ashwin Srinivasan
+     */
+    public int getMove()
+    {
+        return super.getMove();
+    }
+
+    /**
+     * Sets the move value to the value it needs to be for that specific card
+     * @param int m the location that the player will be moved to
+     * @Author Ashwin Srinivasan
+     */
+    public void setMove(int m)
+    {
+        super.setMove(m);
+    }
+
+    /**
+     * Returns the description of the Card
+     * @Return string Description
+     * @Author Ashwin Srinivasan
+     */
+    public String getDescription()
+    {
+        return super.getDescription();
+    }
+
+    /**
+     * Sets the description of the card to the imput value 
+     * @ param String d 
+     * @ author Ashwin Srinivasan
+     */
+    public void setDescription(String d)
+    {
+        super.setDescription(d);
+    }
+
+    /**
+     * returns the name of the Card, either a chance or a chest Card. 
+     * @ return String name, either chance or community chest
+     * @  author Ashwin Srinivasan
+     */
+    public String getName()
+    {
+        return super.getName();
+    }
+
+    /**
+     * Sets the name of the Card to the imputed value
+     * @ preconditon is either Chance Card or Community Chest Card
+     * @ param String n, the name of the Card
+     * @ author Ashwin Srinivasan
+     */
+    public void setName(String n)
+    {
+        super.setName(n);
     }
 }
