@@ -13,21 +13,24 @@ public class Game {
         System.out.print("How many players? ");
         int numPlayers = scan.nextInt();
         ArrayList<Player> players = new ArrayList<Player>();
+        
         for (int i = 0; i < numPlayers; i++) {
             System.out.print("Enter player "+(i+1)+"'s name: ");
             String playerName = scan.next();
             players.add(new Player(i, playerName)); //Creates Player list
         }
-        while (!win) {
+        while (!win) {            
             for (Player e : players) {
-                System.out.println();
-                System.out.println(e.getName() + " is playing.");
-                int dice1 = rollDice();
-                int dice2 = rollDice();
                 boolean turn=true;
-                System.out.println("You rolled a " + dice1 + " and a " + dice2); //Moves the player
                 while(turn)
                 {
+                    System.out.println();
+                    System.out.println(e.getName() + " is playing.");
+                    int dice1 = rollDice();
+                    int dice2 = rollDice();
+
+                    System.out.println("You rolled a " + dice1 + " and a " + dice2); //Moves the player
+
                     if (e.getLoc() > 40) {
                         e.earnMoney(200);
                         int x = e.getLoc() - board.getBoard().size();
@@ -86,21 +89,12 @@ public class Game {
 
                     } else if (board.getSpot(e.getLoc()).getName().equals("GO TO JAIL")) {
                         e.setLoc(41);
+                        turn=false;
                     } else if (board.getSpot(e.getLoc()).getName().equals("Just Visiting")) {
                         System.out.println("You are just visiting jail.");
                     } else if (board.getSpot(e.getLoc()).getType().equals("Tax")) {
                         System.out.println("You are being charged a " + board.getSpot(e.getLoc()).getName() +
                             " of " + board.getSpot(e.getLoc()).getValue());
-
-                    e.pay(board.getSpot(e.getLoc()).getValue());
-                    System.out.println("You now have " + e.getPlayerMoney() + " dollars.");
-                } else if (board.getSpot(e.getLoc()).getType().equals("Chance")) {
-                    int random = ((int) Math.random() * 11);
-                    ChanceCard chance = new ChanceCard(random);
-                    System.out.println("You landed on a Chance spot! Your chance is:");
-                    System.out.println(chance.getDescription());
-                    if (random == 1 || random == 2 || random == 3 || random == 9 || random == 11) {
-                       //finish this is the chance loc if statement
 
                         e.pay(board.getSpot(e.getLoc()).getValue());
                         System.out.println("You now have " + e.getPlayerMoney() + " dollars.");
@@ -121,10 +115,10 @@ public class Game {
                         }
 
                     }
-                    
+
                     else if (board.getSpot(e.getLoc()).getType().equals("Chest")) {
-                        int random = ((int) Math.random() * 11);
-                        ChestCard chest = new ChestCard(random);
+                        int r = ((int) Math.random() * 11);
+                        ChestCard chest = new ChestCard(r);
                         System.out.println("You landed on a Community Chest spot! Your card is:");
                         System.out.println(chest.getDescription());
                         if(chest.getMoney()!=0)
@@ -138,9 +132,7 @@ public class Game {
                             System.out.println("You are now on " + board.getSpot(e.getLoc()).getName());
                         }
 
-
                     }
-
                     if(dice1!=dice2)
                     {
                         turn=false;
@@ -154,8 +146,6 @@ public class Game {
                     win = true;
                     System.out.println("Player " + players.get(0).getPlayerNum() + "  won");
                 }
-                
-
             }
         }
 
