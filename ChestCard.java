@@ -22,7 +22,7 @@ public class ChestCard extends Card
      */
     public ChestCard(int i)
     {
-        super();
+        
         super.setName("Community Chest");
         if(i==1){
             super.setDescription("Advance to Go (Collect $200)");

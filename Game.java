@@ -102,7 +102,7 @@ public class Game {
                     System.out.println("You landed on a Chance spot! Your chance is:");
                     System.out.println(chance.getDescription());
                     if (random == 1 || random == 2 || random == 3 || random == 9 || random == 11) {
-                        //finish this is the chance loc if statement
+                       //finish this is the chance loc if statement
                     }
 
                     if (e.bankrupt()) {
@@ -113,6 +113,7 @@ public class Game {
                     win = true;
                     System.out.println("Player " + players.get(0).getPlayerNum() + "  won");
                 }
+                
 
             }
         }
