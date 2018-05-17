@@ -69,6 +69,7 @@ public class Board
         return board.get(x);
     }
 
+    
     public void printSpot(int x)
     {
         System.out.println(board.get(x).toString());

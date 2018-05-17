@@ -12,6 +12,10 @@
  */
 public class ChestCard extends Card
 {
+    private String description;
+    private String name;
+    private int money;
+    private int move; 
     /** 
      * The method below ina constructor for the class ChestCard.
      * It calls the class setDescription method from the card 
@@ -22,22 +26,21 @@ public class ChestCard extends Card
      */
     public ChestCard(int i)
     {
-        
-       setName("Community Chest");
+        setName("Community Chest");
         if(i==1){
-           setDescription("Advance to Go (Collect $200)");
-           setMove(0);
+            setDescription("Advance to Go (Collect $200)");
+            setMove(0);
         }
         else if(i==2){
-         setDescription("Bank error in your favor – Collect $200");
-         setMoney(200);
+            setDescription("Bank error in your favor – Collect $200");
+            setMoney(200);
         }
         else if(i==3){
             setDescription("You have won second prize in a beauty contest – Collect $10");
             setMoney(10);
         }
         else if(i==4){
-           setDescription("Doctor's fees {fee} – Pay $50");
+            setDescription("Doctor's fees {fee} – Pay $50");
             setMoney(-50);
         }
         else if(i==5){
@@ -54,7 +57,7 @@ public class ChestCard extends Card
         }
         else if(i==8){
             setDescription("Income tax refund – Collect $20 ");
-          setMoney(20);
+            setMoney(20);
         }
         else if(i==9){
             setDescription("Life insurance matures – Collect $100 ");
@@ -62,7 +65,7 @@ public class ChestCard extends Card
         }
         else if(i==10){
             setDescription("Pay hospital fees of $100");
-           setMoney(-100);
+            setMoney(-100);
         }
         else if(i==11){
             setDescription("Pay school fees {tax} of $150");
@@ -70,7 +73,7 @@ public class ChestCard extends Card
         }
         else if(i==12){
             setDescription("Receive $25 consultancy fee ");
-           setMoney(25);
+            setMoney(25);
         }
 
     }

@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.Scanner;
-
 public class Game {
     public static int rollDice() {
         return (int) (Math.random() * 6 + 1);
@@ -13,7 +12,7 @@ public class Game {
         System.out.print("How many players? ");
         int numPlayers = scan.nextInt();
         ArrayList<Player> players = new ArrayList<Player>();
-        
+
         for (int i = 0; i < numPlayers; i++) {
             System.out.print("Enter player "+(i+1)+"'s name: ");
             String playerName = scan.next();
@@ -22,34 +21,38 @@ public class Game {
         while (!win) {            
             for (Player e : players) {
                 boolean turn=true;
+                int counter=0;
                 while(turn)
                 {
                     System.out.println();
+                    int dice1=0;
+                    int dice2=0;
                     System.out.println(e.getName() + " is playing.");
-                    int dice1 = rollDice();
-                    int dice2 = rollDice();
-
-                    System.out.println("You rolled a " + dice1 + " and a " + dice2); //Moves the player
-
-                    if (e.getLoc() > 40) {
-                        e.earnMoney(200);
-                        int x = e.getLoc() - board.getBoard().size();
-                        e.setLoc(x); //Checks to see if the player has gone over the board size 
-                    } else if (board.getSpot(e.getLoc()).getName().equals("Jail")) {
-                        if (dice1 != dice2) {
-                            System.out.println("You're in jail and you didn't roll doubles, try again.");
-                        } else if (dice1 == dice2) {
-                            System.out.println("You rolled doubles! You're out of jail.");
-                            e.move(dice1 + dice2);
-                            board.printSpot(e.getLoc());
-
-                        }
-                    } else {
-                        e.move(dice1 + dice2);
-                        board.printSpot(e.getLoc());
-
+                    System.out.println("Do you want to roll?");
+                    String thing=scan.next();
+                    while(!thing.equals("yes"))
+                    {
+                        System.out.println("Get Ready");
+                        System.out.println("Do you want to roll?");
+                        thing=scan.next();
+                    }
+                    if(thing.equals("yes"))
+                    {
+                        dice1 = rollDice();
+                        dice2 = rollDice();
                     }
 
+                    System.out.println("You rolled a " + dice1 + " and a " + dice2); //Moves the player
+                    counter++;
+                    e.move(dice1+dice2);
+                    if (e.getLoc() > 40) {
+                        e.earnMoney(200);
+                        System.out.println("You passed GO");
+                        int x = e.getLoc() - board.getBoard().size();
+                        e.setLoc(x); //Checks to see if the player has gone over the board size 
+
+                    }
+                    board.printSpot(e.getLoc());
                     String propType = board.getSpot(e.getLoc()).getType();
                     if (propType.equals("Property") || propType.equals("Railroad") || propType.equals("Utility")) { //Checks if type is property
                         if (board.getSpot(e.getLoc()).owned() == 0) //Checks if property is available
@@ -90,7 +93,20 @@ public class Game {
                     } else if (board.getSpot(e.getLoc()).getName().equals("GO TO JAIL")) {
                         e.setLoc(41);
                         turn=false;
-                    } else if (board.getSpot(e.getLoc()).getName().equals("Just Visiting")) {
+                    } 
+                    else if (board.getSpot(e.getLoc()).getName().equals("Jail")) {
+                        if (dice1 != dice2) {
+                            System.out.println("You're in jail and you didn't roll doubles, try again.");
+                        } else if (dice1 == dice2) {
+                            System.out.println("You rolled doubles! You're out of jail.");
+                            e.setLoc(10);
+                            e.move(dice1 + dice2);
+                            board.printSpot(e.getLoc());
+
+                        }
+                    } 
+
+                    else if (board.getSpot(e.getLoc()).getName().equals("Just Visiting")) {
                         System.out.println("You are just visiting jail.");
                     } else if (board.getSpot(e.getLoc()).getType().equals("Tax")) {
                         System.out.println("You are being charged a " + board.getSpot(e.getLoc()).getName() +
@@ -100,7 +116,7 @@ public class Game {
                         System.out.println("You now have " + e.getPlayerMoney() + " dollars.");
                     } else if (board.getSpot(e.getLoc()).getType().equals("Chance")) {
                         int random = ((int) Math.random() * 11);
-                        ChanceCard chance = new ChanceCard(random);
+                        Card chance = new ChanceCard(random);
                         System.out.println("You landed on a Chance spot! Your card is:");
                         System.out.println(chance.getDescription());
                         if(chance.getMoney()!=0)
@@ -118,7 +134,7 @@ public class Game {
 
                     else if (board.getSpot(e.getLoc()).getType().equals("Chest")) {
                         int r = ((int) Math.random() * 11);
-                        ChestCard chest = new ChestCard(r);
+                        Card chest = new ChestCard(r);
                         System.out.println("You landed on a Community Chest spot! Your card is:");
                         System.out.println(chest.getDescription());
                         if(chest.getMoney()!=0)
@@ -138,15 +154,26 @@ public class Game {
                         turn=false;
                     }
                     if (e.bankrupt()) {
+                        System.out.println("You are now bankrupt");
                         turn=false;
                         players.remove(e);
                     }
+                    if(counter==3)
+                    {
+                        e.setLoc(41);
+                        turn=false;
+                    }
+                    counter=0;
                 }
+
                 if (players.size() == 1) {
                     win = true;
-                    System.out.println("Player " + players.get(0).getPlayerNum() + "  won");
+                    System.out.println("Player " + players.get(0).getName() + "  won");
+                    break;
                 }
+
             }
+
         }
 
     }

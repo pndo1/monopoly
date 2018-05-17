@@ -14,11 +14,13 @@
  */
 public class ChanceCard extends Card
 {
-
+    private String description;
+    private String name;
+    private int money;
+    private int move; 
     private String action;
     public ChanceCard(int i){
-        setName("Chance card");
-
+        setName("Chance card");        
         if(i==1){
             setDescription("ADVANCE TO GO(collect $200)");
             setMove(0);
