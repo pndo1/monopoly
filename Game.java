@@ -18,7 +18,9 @@ public class Game {
             String playerName = scan.next();
             players.add(new Player(i, playerName)); //Creates Player list
         }
-        while (!win) {            
+        int turns=0;
+        while (!win) {   
+            turns++;
             for (Player e : players) {
                 boolean turn=true;
                 int counter=0;
@@ -115,7 +117,8 @@ public class Game {
                         e.pay(board.getSpot(e.getLoc()).getValue());
                         System.out.println("You now have " + e.getPlayerMoney() + " dollars.");
                     } else if (board.getSpot(e.getLoc()).getType().equals("Chance")) {
-                        int random = ((int) Math.random() * 11);
+                        int random = ((int) (Math.random() * 11)+1);
+                        System.out.println(random);
                         Card chance = new ChanceCard(random);
                         System.out.println("You landed on a Chance spot! Your card is:");
                         System.out.println(chance.getDescription());
@@ -127,13 +130,20 @@ public class Game {
 
                         if(chance.getMove()!= 0){
                             e.setLoc(chance.getMove());
+                            if(chance.getMove()<e.getLoc())
+                            {
+                                System.out.println("You passed Go!");
+                                e.earnMoney(200);
+                                System.out.println("You now have "+e.getPlayerMoney()+" dollars");
+                            }
                             System.out.println("You are now on " + board.getSpot(e.getLoc()).getName());
                         }
 
                     }
 
                     else if (board.getSpot(e.getLoc()).getType().equals("Chest")) {
-                        int r = ((int) Math.random() * 11);
+                        int r = ((int) (Math.random() * 11)+1);
+                        System.out.println(r);
                         Card chest = new ChestCard(r);
                         System.out.println("You landed on a Community Chest spot! Your card is:");
                         System.out.println(chest.getDescription());
@@ -163,7 +173,7 @@ public class Game {
                         e.setLoc(41);
                         turn=false;
                     }
-                    counter=0;
+                   
                 }
 
                 if (players.size() == 1) {
@@ -173,7 +183,20 @@ public class Game {
                 }
 
             }
-
+            if(turns==100)
+            {
+                win=true;
+                int x=0;
+                int locMax=0;
+                for(int a=0;a<players.size();a++)
+                {
+                   if(players.get(a).getPlayerMoney()>x)
+                   {
+                       locMax=a;
+                    }
+                }
+                System.out.println("player "+players.get(locMax).getName()+" won");
+            }
         }
 
     }

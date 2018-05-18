@@ -13,9 +13,6 @@
 public class ChestCard extends Card
 {
     private String description;
-    private String name;
-    private int money;
-    private int move; 
     /** 
      * The method below ina constructor for the class ChestCard.
      * It calls the class setDescription method from the card 
@@ -26,54 +23,54 @@ public class ChestCard extends Card
      */
     public ChestCard(int i)
     {
-        setName("Community Chest");
+        super.setName("Community Chest");
         if(i==1){
-            setDescription("Advance to Go (Collect $200)");
-            setMove(0);
+            description="Advance to Go (Collect $200)";
+            super.setMove(0);
         }
         else if(i==2){
-            setDescription("Bank error in your favor – Collect $200");
-            setMoney(200);
+            description="Bank error in your favor – Collect $200";
+            super.setMoney(200);
         }
         else if(i==3){
-            setDescription("You have won second prize in a beauty contest – Collect $10");
-            setMoney(10);
+            description="You have won second prize in a beauty contest – Collect $10";
+            super.setMoney(10);
         }
         else if(i==4){
-            setDescription("Doctor's fees {fee} – Pay $50");
-            setMoney(-50);
+            description="Doctor's fees {fee} – Pay $50";
+            super.setMoney(-50);
         }
         else if(i==5){
-            setDescription("From sale of stock you get $50");
-            setMoney(50);
+            description="From sale of stock you get $50";
+            super.setMoney(50);
         }
         else if(i==6){
-            setDescription("You inherit $100");
-            setMoney(100);
+            description="You inherit $100";
+            super.setMoney(100);
         }
         else if(i==7){
-            setDescription("Holiday Fund matures - Receive $100 ");
-            setMoney(100);
+            description="Holiday Fund matures - Receive $100 ";
+            super.setMoney(100);
         }
         else if(i==8){
-            setDescription("Income tax refund – Collect $20 ");
-            setMoney(20);
+            description="Income tax refund – Collect $20 ";
+            super.setMoney(20);
         }
         else if(i==9){
-            setDescription("Life insurance matures – Collect $100 ");
-            setMoney(100);
+            description="Life insurance matures – Collect $100 ";
+            super.setMoney(100);
         }
         else if(i==10){
-            setDescription("Pay hospital fees of $100");
-            setMoney(-100);
+            description="Pay hospital fees of $100";
+            super.setMoney(-100);
         }
         else if(i==11){
-            setDescription("Pay school fees {tax} of $150");
-            setMoney(-150);
+            description="Pay school fees {tax} of $150";
+            super.setMoney(-150);
         }
         else if(i==12){
-            setDescription("Receive $25 consultancy fee ");
-            setMoney(25);
+            description="Receive $25 consultancy fee ";
+            super.setMoney(25);
         }
 
     }
@@ -127,8 +124,9 @@ public class ChestCard extends Card
      */
     public String getDescription()
     {
-        return super.getDescription();
+        return description;
     }
+    
 
     /**
      * Sets the description of the card to the imput value 
@@ -137,7 +135,7 @@ public class ChestCard extends Card
      */
     public void setDescription(String d)
     {
-        super.setDescription(d);
+        description=d;
     }
 
     /**

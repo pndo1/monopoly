@@ -15,61 +15,57 @@
 public class ChanceCard extends Card
 {
     private String description;
-    private String name;
-    private int money;
-    private int move; 
-    private String action;
     public ChanceCard(int i){
-        setName("Chance card");        
+        super.setName("Chance card");        
         if(i==1){
-            setDescription("ADVANCE TO GO(collect $200)");
-            setMove(0);
+            description="ADVANCE TO GO(collect $200)";
+            super.setMove(0);
         }
         else if(i==2){
-            setDescription("ADVANCE TO BOARDWALK");
-            setMove(39);
+            description="ADVANCE TO BOARDWALK";
+            super.setMove(39);
         }
         else if(i==3){
-            setDescription("ADVANCE TO ST. CHARLES PLACE. If you pass go, collect $200");
-            setMove(11);
+            description="ADVANCE TO ST. CHARLES PLACE. If you pass go, collect $200";
+            super.setMove(11);
         }
         else if(i==4){
-            setDescription("BANK PAYS YOU DIVIDEND OF $50");
-            setMoney(50);
+            description="BANK PAYS YOU DIVIDEND OF $50";
+            super.setMoney(50);
         }
         else if(i==5){
-            setDescription("HOSPITAL FEES PAY $100");
-            setMoney(-100);
+            description="HOSPITAL FEES PAY $100";
+            super.setMoney(-100);
         }
         else if(i==6){
-            setDescription("MAKE GENERAL REPAIRS ON ALL YOUR PROPERTY. PAY $150");
-            setMoney(-150);
+            description="MAKE GENERAL REPAIRS ON ALL YOUR PROPERTY. PAY $150";
+            super.setMoney(-150);
         }
         else if(i==7){
 
-            setDescription("YOUR BUILDING LOAN MATURES.\nCOLLECT $150");
-            setMoney(150);
+            description="YOUR BUILDING LOAN MATURES.\nCOLLECT $150";
+            super.setMoney(150);
         }
         else if(i==8){
-            setDescription("YOU HAVE WON SECOND PRIZE IN A BEAUTY CONTEST.\nCOLLECT $50 ");
-            setMoney(50);
+            description="YOU HAVE WON SECOND PRIZE IN A BEAUTY CONTEST.\nCOLLECT $50 ";
+            super.setMoney(50);
 
         }
         else if(i==9){
-            setDescription("GO TO JAIL.\nGO DIRECTLY TO JAIL.\nDON'T PASS GO AND DON'T COLLECT $200");
-            setMove(-1);
+            description="GO TO JAIL.\nGO DIRECTLY TO JAIL.\nDON'T PASS GO AND DON'T COLLECT $200";
+            super.setMove(41);
         }
         else if(i==10){
-            setDescription("PAY SCHOOL FEES OF $150");
-            setMoney(-150);
+            description="PAY SCHOOL FEES OF $150";
+            super.setMoney(-150);
         }
         else if(i==11){
-            setDescription("TAKE A TRIP TO READING RAILROAD  – If you pass Go, collect $200");
-            setMove(5);
+            description="TAKE A TRIP TO READING RAILROAD  – If you pass Go, collect $200";
+            super.setMove(5);
         }
         else if(i==12){
-            setDescription("YOU HAVE WON A CROSSWORD COMPETITION- COLLECT $100");
-            setMoney(100);
+            description="YOU HAVE WON A CROSSWORD COMPETITION- COLLECT $100";
+            super.setMoney(100);
         }
     }
 
@@ -122,7 +118,7 @@ public class ChanceCard extends Card
      */
     public String getDescription()
     {
-        return super.getDescription();
+        return description;
     }
 
     /**
@@ -132,7 +128,7 @@ public class ChanceCard extends Card
      */
     public void setDescription(String d)
     {
-        super.setDescription(d);
+        description=d;
     }
 
     /**

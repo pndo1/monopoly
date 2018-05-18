@@ -28,35 +28,35 @@ public class Player
         name=na;
 
     }
-    
+
     public static int getNumPlayers()
     {
-       return numPlayers; 
+        return numPlayers; 
     }
-    
+
     public void setPlayerMoney(int m){
         money =m;
     }
-    
+
     public void pay(int m)
     {
         money-=m;
     }
-    
+
     public void earnMoney(int m){
-     money += m;   
+        money += m;   
     }
-    
+
     public int getPlayerMoney(){
         return money; 
     }
-    
+
     public void change(Card c)
     {
         money+=c.getMoney();
         loc=c.getMove();
     }
-    
+
     public void move(int m)
     {
         loc+=m;
@@ -66,7 +66,7 @@ public class Player
         properties.add(prop);
         prop.setOwner(this);
     }
-    
+
     public boolean bankrupt()
     {
         if(money<0){
@@ -74,23 +74,21 @@ public class Player
         }
         return false;
     }
-    
+
     public int getLoc()
     {
         return loc;
     }
-    
-    
+
     public int getPlayerNum()
     {
         return playerNum;
     }
-    
+
     public void setLoc(int x){
         loc = x;
     }
 
     public String getName(){ return name;}
-    }
-
+}
 
